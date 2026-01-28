@@ -1,0 +1,104 @@
+html,body{
+    height: 100vh;
+    overflow: hidden;   
+}
+#stage{
+
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffd5df;
+    
+}
+#letter{
+    isolation: isolate;
+    position: fixed;
+    max-width: 60%;
+    background: #fffaf5;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.96); 
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 100; 
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    line-height: 1.6;
+    padding: 20px 24px;
+    font-family: Sofia, cursive;
+    max-height: 70vh;
+    overflow-y: auto;
+    
+   
+    
+}
+#letter.show{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 10;
+    pointer-events: auto;
+}
+#envelop {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;  
+    z-index: 1; 
+    pointer-events: auto; 
+    width: 350px;
+}
+#envelop.open{
+    transform: scale(1.05);
+    width: 350px;
+}
+#finalTxt{
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+    position: absolute; 
+    pointer-events: none;   
+    font-family: Sofia;
+    
+    
+}
+#finalTxt.app{
+    opacity: 1;
+    display: flex;
+    font-size: 35px;
+}
+#letter.disable{
+    pointer-events: none;
+}
+#letter * {
+    pointer-events: auto;
+}
+#text{
+    font-size: 25px;
+    font-family: Sofia ;
+    
+}
+#finalBtn{
+    font-size: 18px;
+    font-family: Sofia;
+    background-color: pink;
+    border-radius: 12px;
+}
+#decore{
+    position: absolute;
+    transform: none;
+    pointer-events: none;
+    z-index: 0;
+    inset: 0;
+    top: 20%;
+    left: 10%;
+}
+#berry{
+    top: 20px;
+    left: 12px;
+    width: 12px;
+}
